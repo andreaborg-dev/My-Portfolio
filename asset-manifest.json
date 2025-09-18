@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/My-Portfolio/static/css/main.781ed5a7.css",
+    "main.js": "/My-Portfolio/static/js/main.b448819f.js",
+    "static/js/453.c7e08b54.chunk.js": "/My-Portfolio/static/js/453.c7e08b54.chunk.js",
+    "static/media/Bracket 2.png": "/My-Portfolio/static/media/Bracket 2.4a5d9935020122ce92a0.png",
+    "static/media/Bracket 1.png": "/My-Portfolio/static/media/Bracket 1.38bb85d0c9e570c86c64.png",
+    "index.html": "/My-Portfolio/index.html",
+    "main.781ed5a7.css.map": "/My-Portfolio/static/css/main.781ed5a7.css.map",
+    "main.b448819f.js.map": "/My-Portfolio/static/js/main.b448819f.js.map",
+    "453.c7e08b54.chunk.js.map": "/My-Portfolio/static/js/453.c7e08b54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.781ed5a7.css",
+    "static/js/main.b448819f.js"
+  ]
+}
