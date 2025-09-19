@@ -41,15 +41,23 @@ html, body {
   overflow: auto;
   height: 50%;
   max-height: 500px;
+  padding-top: 0;
 }
 
-.aboutcontainer h1{
+.aboutcontainer h1{ 
+  position: sticky;
   border-bottom: 2px solid;
+  margin-top: 0;
+  padding-top: 0;
+  top: 0;
+  z-index: 1;
+  background-color: white;
 }
 
 .aboutcontainer p{
   text-align: justify;
   margin: 3vh 0;
+  padding-top: 10px;
 }
 
 
@@ -265,6 +273,10 @@ label {
   font-size: 1rem;
   border-top: 2px solid white;
   margin-top: auto;
+}
+
+.navbuttons, .footer{
+  z-index: 1000;
 }
 
 /* === Responsive Nav Buttons And Footer === */
