@@ -25,8 +25,8 @@ html, body {
 }
 
 /* === Home Section === */
-/* === Main Content Container (Scaled Down) === */
-.container2 {
+/* === Main Content Container and The container for the about page(Scaled Down) === */
+.container2, .aboutcontainer {
   width: 100%;
   max-width: 800px; /* was 1000px */
   background-color: white;
@@ -36,6 +36,22 @@ html, body {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
+.aboutcontainer{
+  overflow: auto;
+  height: 50%;
+  max-height: 500px;
+}
+
+.aboutcontainer h1{
+  border-bottom: 2px solid;
+}
+
+.aboutcontainer p{
+  text-align: justify;
+  margin: 3vh 0;
+}
+
 
 /* === Header Text (Smaller) === */
 .homeheader {
