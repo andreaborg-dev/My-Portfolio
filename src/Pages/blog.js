@@ -1,4 +1,5 @@
 import '../App.css'
+import underconstruction from '../Images/under-construction.png'
 
 export function Blog() {
     return (
@@ -7,7 +8,7 @@ export function Blog() {
             <title>My Blog</title>
         </head>
         <div className='container'>
-            <h1>This is the blog page</h1>
+            <img src={underconstruction} alt='This page is still under construction!' className='under-construction'/>
             </div>
             </>
     );

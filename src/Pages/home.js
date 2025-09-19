@@ -10,7 +10,7 @@ export function Home() {
         </head>
         <div className='container'>
             <div className='container2'>
-            <div className='homeheader'>Andrea Borġ</div>
+            <div className='homeheader'>Andrea Borg</div>
             <div className='homesubheader'>Front-End Website Developer</div>
             <div className='cards'>
             

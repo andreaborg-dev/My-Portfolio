@@ -1,4 +1,5 @@
 import '../App.css'
+import underconstruction from '../Images/under-construction.png'
 export function About() {
     return ( 
         <>
@@ -6,7 +7,7 @@ export function About() {
             <title>About Me</title>
         </head>
         <div className='container'>
-            <h1>This is the about page</h1>
+            <img src={underconstruction} alt='This page is still under construction!' className='under-construction'/>
             </div>
             </>
     );

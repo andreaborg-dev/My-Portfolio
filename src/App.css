@@ -6,7 +6,7 @@
 }
 
 html, body, #root{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-color: #ffffff;
     overflow: hidden;
@@ -64,7 +64,6 @@ a{
     display: flex;
     justify-content: center;
     align-content: center;
-    
     width:200px;
     transition: all 0.3s ease;
 }
@@ -228,7 +227,39 @@ a{
     font-weight: bolder;
 }
 
+.under-construction{
+    height: 80%;
+    width: auto;
+}
 
+@media (min-width: 621px) and (max-width: 1024px) {
+    .navbuttons{
+        height: 150px;
+        align-items: center;
+    }
+    .navbuttons button{
+        width: 180px;
+        height: 70px;
+        font-size: 35px;
+    }
+    .footer{
+        height: 150px;
+        font-size: 50px;
+        align-items: center;
+    }
+.container2{
+height: fit-content;
+transform: scale(1.4);
+}
+
+.contactcontainer2{
+    scale: 1.7;
+}
+
+.card1, .card2, .card3{
+    margin-bottom: 30px;
+}
+}
 
 @media (max-width: 620px) {
     .navbuttons button{
@@ -236,6 +267,10 @@ a{
     height: 30px;
     font-size: 10px;
     }
+
+    .under-construction{
+    height: 50%;
+}
 
     .contactcontainer2{
     height: 400px;
@@ -285,3 +320,5 @@ a{
 width: 300px;
 }
 }
+
+
