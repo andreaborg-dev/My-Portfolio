@@ -8,6 +8,7 @@ export function Home() {
         <head>
             <title>Home</title>
         </head>
+        <div className='home'>
         <div className='container'>
             <div className='container2'>
             <div className='homeheader'>Andrea Borg</div>
@@ -39,6 +40,7 @@ export function Home() {
             <p className='speaker'>- Don Draper</p>
             </div>
             <img src={Bracket2} alt='leaf bracket right' className='bracket-right'/>
+            </div>
             </div>
             </div>
             </div>

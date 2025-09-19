@@ -1,223 +1,320 @@
-/* Reset & Base */
+/* === Global Reset === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
-html, body, #root {
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: #062a58;
+  overflow-x: hidden;
 }
 
-/* Navigation Buttons */
-.navbuttons {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    position: fixed;
-    top: 0;
-    padding: 20px 0;
-    border-bottom: 2px solid white;
-    background: #062a58;
-    z-index: 1000;
+/* === Centering Container === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
-.navbuttons button {
-    width: 100px;
-    height: 50px;
-    color: white;
-    background: none;
-    cursor: pointer;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+/* === Home Section === */
+/* === Main Content Container (Scaled Down) === */
+.container2 {
+  width: 100%;
+  max-width: 800px; /* was 1000px */
+  background-color: white;
+  border: 2px solid #062a58;
+  border-radius: 10px;
+  padding: 30px; /* was 40px */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.navbuttons button:hover {
-    background-color: rgba(0, 0, 0, 0.25);
-    transform: scale(1.05);
+/* === Header Text (Smaller) === */
+.homeheader {
+  font-size: clamp(1.8rem, 5vw, 3rem); /* was up to 4rem */
+  font-weight: bold;
+  color: #062a58;
+  margin-bottom: 10px;
 }
 
-/* Cards Section */
+.homesubheader {
+  font-size: clamp(1rem, 4vw, 1.8rem); /* smaller max */
+  font-weight: bold;
+  color: #062a58;
+  margin-bottom: 25px;
+}
+
+/* === Cards Container: Horizontal layout with wrapping to avoid horizontal scroll === */
 .cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-top: 150px;
+  display: flex;
+  flex-wrap: wrap;          /* allow wrapping */
+  justify-content: center;  /* center cards */
+  gap: 20px;
+  padding-top: 20px;
+  overflow-x: visible;      /* no horizontal scroll */
 }
 
+/* === Cards: flex horizontal content === */
 .card1, .card2, .card3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    transition: all 0.3s ease;
-}
-
-.card1 img, .card2 img, .card3 img {
-    width: auto;
-    height: 100px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  max-width: 100%;  /* allow shrinking */
+  padding: 15px;
+  background-color: #062a58;
+  color: white;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  gap: 10px;
 }
 
 .card1:hover, .card2:hover, .card3:hover {
-    transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-.card1 { margin-top: 180px; }
-.card2 { margin-top: 30px; }
-.card3 { margin-top: 180px; }
+/* Bracket images */
+.bracket-left {
+  width: 40px;
+  height: auto;
+}
 
+.bracket-right {
+  width: 40px;
+  height: auto;
+}
+
+/* Quote and Speaker: stacked vertically */
 .card1 div, .card2 div, .card3 div {
-    text-align: center;
-    line-height: 20px;
-    letter-spacing: 0.4px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
 }
 
-/* Speaker & Quote */
+.quote {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
 .speaker {
-    width: 120px;
-    border: none;
-    margin-top: -10px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
-.quote, .speaker {
-    font-size: 14px;
-    width: 150px;
+/* === Responsive Cards Width === */
+@media (max-width: 900px) {
+  .card1, .card2, .card3 {
+    width: 45%; /* Two cards per row approx */
+  }
 }
 
-/* Contact Container */
-.contactcontainer, .container, .contactcontainer2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 600px) {
+  .card1, .card2, .card3 {
+    width: 100%; /* Full width on small devices */
+  }
+}
+
+/* === Contact Section === */
+.contactcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
 .contactcontainer2 {
-    width: 90%;
-    max-width: 350px;
-    height: auto;
-    padding: 20px;
-    border: 5px solid #051f40;
-    border-radius: 20px;
-    background-color: #062a58;
-    color: white;
-    box-shadow: 0 0 30px darkgrey;
-    text-align: justify;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  color: #062a58;
+  border: 2px solid #062a58;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .contactcontainer2 h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-decoration: underline 4px;
-    text-underline-offset: 10px;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-decoration: underline 4px #062a58;
+  text-underline-offset: 8px;
 }
 
-/* Form */
-.Name label, .Email label, .Message label {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
+/* === Form Elements === */
+.Name, .Email, .Message {
+  margin-bottom: 20px;
 }
 
-.Name input, .Email input, .Message input {
-    width: 80%;
-    max-width: 250px;
-    margin: 10px auto;
-    display: block;
-    height: 30px;
-    border-radius: 10px;
-    border: 2px solid black;
-    text-align: center;
-    box-shadow: 0 0 15px lightgray;
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
 }
 
-.Message input { height: 50px; }
+.inputbox {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #062a58;
+  background-color: white;
+  color: #062a58;
+  font-size: 1rem;
+}
+
+.inputbox:focus {
+  outline: none;
+  box-shadow: 0 0 8px #062a58;
+}
+
+/* === Submit Button === */
+.Submit-Button {
+  text-align: center;
+  margin-top: 30px;
+}
 
 .Submit-Button input {
-    display: block;
-    margin: 50px auto 10px auto;
-    width: 100px;
-    height: 40px;
-    color: white;
-    background: none;
-    border-radius: 10px;
-    border: 2px solid white;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  background-color: #062a58;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .Submit-Button input:hover {
-    background-color: rgba(0, 0, 0, 0.25);
-    transform: scale(1.05);
+  background-color: #054395;
 }
 
-/* Footer */
+/* === Navbar === */
+.navbuttons {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background-color: #062a58;
+  border-bottom: 2px solid white;
+  z-index: 1000;
+}
+
+.navbuttons button {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbuttons button:hover {
+  background-color: white;
+  color: #062a58;
+  transform: scale(1.05);
+}
+
+/* === Footer === */
 .footer {
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding: 20px;
+  background-color: #062a58;
+  color: white;
+  font-size: 1rem;
+  border-top: 2px solid white;
+  margin-top: auto;
+}
+
+/* === Responsive Nav Buttons And Footer === */
+@media (max-width: 600px) {
+  .navbuttons {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .navbuttons button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  .container2 {
+    padding: 30px 20px;
+  }
+
+  .homeheader {
+    font-size: 2.2rem;
+  }
+
+  .homesubheader {
+    font-size: 1.6rem;
+  }
+
+  .card1, .card2, .card3 {
+    width: 260px;
+  }
+
+  .contactcontainer2 {
+    padding: 25px 20px;
+  }
+
+  .contactcontainer2 h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeheader {
+    font-size: 1.8rem;
+  }
+
+  .homesubheader {
+    font-size: 1.2rem;
+  }
+
+  .inputbox {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .Submit-Button input {
     width: 100%;
-    padding: 30px 0;
-    border-top: 2px solid white;
-    background-color: #062a58;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    z-index: 1000;
-}
+    padding: 12px;
+  }
 
-/* Home Section */
-.container2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 700px;
-    height: auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px darkgrey;
-    background: #062a58;
-}
-
-.homeheader { font-size: clamp(2rem, 6vw, 5rem); font-weight: bolder; text-align: center; }
-.homesubheader { font-size: clamp(1.5rem, 4vw, 3rem); font-weight: bolder; text-align: center; }
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .navbuttons { flex-wrap: wrap; padding: 15px; }
-    .navbuttons button { width: 150px; height: 60px; font-size: 1.5rem; }
-    
-    .container2 { transform: scale(1.2); }
-    .contactcontainer2 { transform: scale(1.4); }
-}
-
-@media (max-width: 620px) {
-    .navbuttons { flex-wrap: wrap; }
-    .navbuttons button { width: 50px; height: 30px; font-size: 0.7rem; }
-    
-    .cards { flex-direction: column; padding-top: 100px; }
-    .card1, .card2, .card3 { margin-top: 20px; }
-
-    .contactcontainer2 { width: 90%; height: auto; padding: 15px; }
-    .contactcontainer2 h1 { font-size: 1.5rem; padding-top: 20px; margin-bottom: 20px; }
-    
-    .Name input, .Email input, .Message input { width: 90%; max-width: 200px; }
-    
-    .container2 { width: 90%; transform: scale(1); }
-    .homeheader { font-size: 2rem; }
-    .homesubheader { font-size: 1.2rem; }
+  .card1, .card2, .card3 {
+    width: 100%;
+  }
 }
