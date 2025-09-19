@@ -12,6 +12,7 @@ html, body {
   background-color: white;
   color: #062a58;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 /* === Centering Container === */
