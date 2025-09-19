@@ -1,324 +1,223 @@
-*{
+/* Reset & Base */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-html, body, #root{
+html, body, #root {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     background-color: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
-
-.navbuttons{
+/* Navigation Buttons */
+.navbuttons {
     display: flex;
     width: 100%;
     justify-content: space-around;
     position: fixed;
-    right: 0;
     top: 0;
     padding: 20px 0;
     border-bottom: 2px solid white;
     background: #062a58;
+    z-index: 1000;
 }
 
-.navbuttons button{
-    display: flex;
+.navbuttons button {
     width: 100px;
     height: 50px;
     color: white;
     background: none;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
     border: none;
     border-radius: 10px;
-    transition: all 0.3s ease-in; 
+    transition: all 0.3s ease-in-out;
 }
 
-.navbuttons button:hover{
-    background-color: rgba(0, 0, 0, 0.255);
+.navbuttons button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
     transform: scale(1.05);
 }
 
-a{
-    text-decoration: none;
-}
-
-.card1 img, .card2 img, .card3 img, .card1, .card2, .card3{
-    display: flex;
-    height: 100px;
-    width: auto;
-}
-
-.cards{
-    display: flex;
-}
-
-.card1, .card2, .card3{
+/* Cards Section */
+.cards {
     display: flex;
     justify-content: center;
-    align-content: center;
-    width:200px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 150px;
+}
+
+.card1, .card2, .card3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
     transition: all 0.3s ease;
 }
 
-.card1:hover, .card2:hover, .card3:hover{
+.card1 img, .card2 img, .card3 img {
+    width: auto;
+    height: 100px;
+}
+
+.card1:hover, .card2:hover, .card3:hover {
     transform: scale(1.1);
 }
 
-.card1, .card3{
-    margin-top: 180px;
-}
+.card1 { margin-top: 180px; }
+.card2 { margin-top: 30px; }
+.card3 { margin-top: 180px; }
 
-.card2{
-    margin-top: 30px;
-}
-
-.card1 div, .card2 div, .card3 div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card1 div, .card2 div, .card3 div {
+    text-align: center;
     line-height: 20px;
     letter-spacing: 0.4px;
-    text-align: center;
     width: 80%;
-    flex-direction: column;
-}
-
-.speaker{
-    border: none;
-    margin-top: -10px;
-    width: 120px;
-}
-
-.quote, .speaker{
-    width: 150px;
-    font-size: 14px;
-}
-
-.contactcontainer, .container, .contactcontainer2{
     display: flex;
-    height: 100vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    padding: 30px 0;
-    border-top: 2px solid;
-    color: white;
-    background-color: #062a58;
+/* Speaker & Quote */
+.speaker {
+    width: 120px;
+    border: none;
+    margin-top: -10px;
 }
 
-.contactcontainer2{
-    height: 450px;
-    width: 350px;
+.quote, .speaker {
+    font-size: 14px;
+    width: 150px;
+}
+
+/* Contact Container */
+.contactcontainer, .container, .contactcontainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactcontainer2 {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    padding: 20px;
     border: 5px solid #051f40;
     border-radius: 20px;
-    background: #062a58;
+    background-color: #062a58;
     color: white;
-    display: flex;
     box-shadow: 0 0 30px darkgrey;
-    justify-content: center;
     text-align: justify;
 }
 
-.contactcontainer2 h1{
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
+.contactcontainer2 h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-decoration: underline 4px;
     text-underline-offset: 10px;
-    padding-bottom: 4px;
-    width: 100%;
-    margin-bottom: 40px;
 }
 
-.Name label, .Email label, .Message label{
-    display: flex;
-    justify-content: center;
+/* Form */
+.Name label, .Email label, .Message label {
+    display: block;
+    text-align: center;
     margin-top: 10px;
 }
 
-.Name input, .Email input, .Message input{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+.Name input, .Email input, .Message input {
+    width: 80%;
+    max-width: 250px;
+    margin: 10px auto;
+    display: block;
     height: 30px;
-    width: 250px;
     border-radius: 10px;
     border: 2px solid black;
     text-align: center;
     box-shadow: 0 0 15px lightgray;
 }
 
-.Message input{
-    height: 50px;
-}
+.Message input { height: 50px; }
 
-.Submit-Button{
-    display: flex;
-    justify-content: center;
-}
-
-.Submit-Button input{
-    color: white;
+.Submit-Button input {
+    display: block;
+    margin: 50px auto 10px auto;
     width: 100px;
     height: 40px;
+    color: white;
     background: none;
     border-radius: 10px;
+    border: 2px solid white;
     cursor: pointer;
-    transition: all 0.3s ease-in;
-    margin-top:  50px;
-    margin-bottom: 10px;
-    border-right: 2px solid white;
-    border-left: 2px solid white;
-    border-top: 0px solid rgba(0, 0, 0, 0);
-    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-in-out;
 }
 
-.Submit-Button input:hover{
-    background-color: rgba(0, 0, 0, 0.255);
+.Submit-Button input:hover {
+    background-color: rgba(0, 0, 0, 0.25);
     transform: scale(1.05);
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
-    border-right: 0px solid rgba(0, 0, 0, 0);
-    border-left: 0px solid rgba(0, 0, 0, 0);
 }
 
-.footer, .navbuttons{
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0;
+    border-top: 2px solid white;
+    background-color: #062a58;
+    color: white;
+    position: fixed;
+    bottom: 0;
     z-index: 1000;
 }
 
-.container2{
+/* Home Section */
+.container2 {
     display: flex;
-    border: 5px solid #051f40;
-    color: white;
     flex-direction: column;
     align-items: center;
-    width: 700px;
-    padding-top: 20px;
-    height: 70vh;
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 30px darkgrey;
     background: #062a58;
 }
 
-.homeheader{
-    font-size: 80px;
-}
+.homeheader { font-size: clamp(2rem, 6vw, 5rem); font-weight: bolder; text-align: center; }
+.homesubheader { font-size: clamp(1.5rem, 4vw, 3rem); font-weight: bolder; text-align: center; }
 
-.homesubheader{
-    font-size: 40px;
-}
-
-.homeheader, .homesubheader{
-    font-weight: bolder;
-}
-
-.under-construction{
-    height: 80%;
-    width: auto;
-}
-
-@media (min-width: 621px) and (max-width: 1024px) {
-    .navbuttons{
-        height: 150px;
-        align-items: center;
-    }
-    .navbuttons button{
-        width: 180px;
-        height: 70px;
-        font-size: 35px;
-    }
-    .footer{
-        height: 150px;
-        font-size: 50px;
-        align-items: center;
-    }
-.container2{
-height: fit-content;
-transform: scale(1.4);
-}
-
-.contactcontainer2{
-    scale: 1.7;
-}
-
-.card1, .card2, .card3{
-    margin-bottom: 30px;
-}
+/* Responsive */
+@media (max-width: 1024px) {
+    .navbuttons { flex-wrap: wrap; padding: 15px; }
+    .navbuttons button { width: 150px; height: 60px; font-size: 1.5rem; }
+    
+    .container2 { transform: scale(1.2); }
+    .contactcontainer2 { transform: scale(1.4); }
 }
 
 @media (max-width: 620px) {
-    .navbuttons button{
-    width: 50px;
-    height: 30px;
-    font-size: 10px;
-    }
+    .navbuttons { flex-wrap: wrap; }
+    .navbuttons button { width: 50px; height: 30px; font-size: 0.7rem; }
+    
+    .cards { flex-direction: column; padding-top: 100px; }
+    .card1, .card2, .card3 { margin-top: 20px; }
 
-    .under-construction{
-    height: 50%;
+    .contactcontainer2 { width: 90%; height: auto; padding: 15px; }
+    .contactcontainer2 h1 { font-size: 1.5rem; padding-top: 20px; margin-bottom: 20px; }
+    
+    .Name input, .Email input, .Message input { width: 90%; max-width: 200px; }
+    
+    .container2 { width: 90%; transform: scale(1); }
+    .homeheader { font-size: 2rem; }
+    .homesubheader { font-size: 1.2rem; }
 }
-
-    .contactcontainer2{
-    height: 400px;
-    width: 300px;
-    }
-
-    .contactcontainer2 h1{
-    font-size: 30px;
-    padding-top: 40px;
-    margin-top: 20px;
-    padding-bottom: 0px;
-    }
-
-    .Name input, .Email input, .Message input{
-        width: 200px;
-    }
-
-    .Submit-Button{
-        padding-bottom: 40px;
-        margin-bottom: 20px;
-    }
-
-    .Name label, .Email label, .Message label{
-        margin: 5px;
-    }
-
-    .cards{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-
-    .card1, .card2, .card3{
-        margin-top: 20px;
-    }
-
-    .homeheader{
-    font-size: 40px;
-}
-
-.homesubheader{
-    font-size: 20px;
-}
-
-.container2{
-width: 300px;
-}
-}
-
-
